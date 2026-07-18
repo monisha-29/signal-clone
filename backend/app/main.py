@@ -4,7 +4,7 @@ Main application module for the Signal Clone backend API.
 This module initializes the FastAPI application, sets up CORS middleware,
 configures static file serving for uploads, and registers all API routers.
 """
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
@@ -73,7 +73,7 @@ app.include_router(messages.router)
 app.include_router(ws.router)
 
 @app.post("/api/upload")
-def upload_file(file: UploadFile = File(...)):
+def upload_file(request: Request, file: UploadFile = File(...)):
     """
     Endpoint to handle file uploads.
 
@@ -89,7 +89,7 @@ def upload_file(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
         
     # Return file access url
-    file_url = f"http://localhost:8000/static_uploads/{unique_filename}"
+    file_url = str(request.base_url) + f"static_uploads/{unique_filename}"
     
     # Determine type category based on file extension
     mime_type = "file"
