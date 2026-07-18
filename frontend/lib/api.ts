@@ -4,9 +4,10 @@
  * Provides a service layer for interacting with the backend REST API.
  * Handles authentication headers, error parsing, and structured requests.
  */
-import { User, Conversation, Message, ContactResponse } from './types';
+import { User, Conversation, Message } from './types';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 /**
  * Core fetch wrapper that automatically attaches the authorization token
@@ -120,7 +121,7 @@ export const api = {
   uploadFile: (file: File): Promise<{ url: string; filename: string; type: 'image' | 'video' | 'audio' | 'file' }> => {
     const formData = new FormData();
     formData.append('file', file);
-    return fetch('http://localhost:8000/api/upload', {
+    return fetch(`${API_BASE_URL}/api/upload`, {
       method: 'POST',
       body: formData,
     }).then((res) => {
