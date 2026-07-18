@@ -19,7 +19,10 @@ class WebSocketClient {
   private token: string | null = null;
   private listeners: Set<SocketCallback> = new Set();
   private reconnectTimeout: any = null;
-  private url = 'ws://localhost:8000/api/ws';
+  private url =
+  (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000")
+    .replace("https://", "wss://")
+    .replace("http://", "ws://") + "/api/ws";
 
   /**
    * Establishes a WebSocket connection using the provided auth token.
