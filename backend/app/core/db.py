@@ -6,7 +6,7 @@ for FastAPI endpoints to acquire database sessions.
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
-from backend.app.models import Base
+from app.models import Base
 
 DATABASE_URL = "sqlite:///./signal.db"
 
