@@ -5,7 +5,7 @@ Useful for development and testing environments.
 """
 import datetime
 from sqlalchemy.orm import Session
-from backend.app.models import User, Contact, Conversation, ConversationMember, Message, MessageReceipt
+from app.models import User, Contact, Conversation, ConversationMember, Message, MessageReceipt
 
 def seed_data(db: Session):
     """
