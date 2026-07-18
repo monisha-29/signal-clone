@@ -53,7 +53,7 @@ origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://signal-clone-d43rl3c5w-monishab.vercel.app",
-    "signal-clone-git-main-monishab.vercel.app"
+    "https://signal-clone-git-main-monishab.vercel.app"
 ]
 
 app.add_middleware(
