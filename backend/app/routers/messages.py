@@ -7,10 +7,10 @@ from sqlalchemy.orm import Session
 from sqlalchemy import desc, asc
 from typing import List
 import datetime
-from backend.app.core.db import get_db
-from backend.app.core.security import get_current_user
-from backend.app.models import User, Conversation, ConversationMember, Message, MessageReceipt
-from backend.app.schemas import MessageResponse
+from app.core.db import get_db
+from app.core.security import get_current_user
+from app.models import User, Conversation, ConversationMember, Message, MessageReceipt
+from app.schemas import MessageResponse
 
 router = APIRouter(prefix="/api/messages", tags=["messages"])
 

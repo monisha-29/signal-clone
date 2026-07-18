@@ -7,10 +7,10 @@ from sqlalchemy.orm import Session
 from jose import JWTError, jwt
 import json
 import datetime
-from backend.app.core.db import get_db
-from backend.app.core.security import SECRET_KEY, ALGORITHM
-from backend.app.core.connection_manager import manager
-from backend.app.models import User, Conversation, ConversationMember, Message, MessageReceipt
+from app.core.db import get_db
+from app.core.security import SECRET_KEY, ALGORITHM
+from app.core.connection_manager import manager
+from app.models import User, Conversation, ConversationMember, Message, MessageReceipt
 
 router = APIRouter(tags=["ws"])
 
@@ -199,7 +199,7 @@ async def websocket_endpoint(
                             reply_content = f"Hey! I got your message: '{user_content}'."
                             
                             # Write response message to SQLite using a fresh session
-                            from backend.app.core.db import SessionLocal
+                            from app.core.db import SessionLocal
                             session = SessionLocal()
                             try:
                                 reply_msg = Message(

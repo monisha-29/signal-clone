@@ -7,10 +7,10 @@ from sqlalchemy.orm import Session
 from sqlalchemy import desc, func
 from typing import List, Optional
 from datetime import datetime
-from backend.app.core.db import get_db
-from backend.app.core.security import get_current_user
-from backend.app.models import User, Conversation, ConversationMember, Message
-from backend.app.schemas import ConversationResponse, GroupCreate
+from app.core.db import get_db
+from app.core.security import get_current_user
+from app.models import User, Conversation, ConversationMember, Message
+from app.schemas import ConversationResponse, GroupCreate
 
 router = APIRouter(prefix="/api/conversations", tags=["conversations"])
 

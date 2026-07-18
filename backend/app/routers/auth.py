@@ -4,10 +4,10 @@ Handles endpoints for user registration, login, logout, and fetching the current
 """
 from fastapi import APIRouter, Depends, HTTPException, status, Response, Request
 from sqlalchemy.orm import Session
-from backend.app.core.db import get_db
-from backend.app.core.security import create_access_token, get_current_user
-from backend.app.models import User
-from backend.app.schemas import UserCreate, UserLogin, Token, UserResponse
+from app.core.db import get_db
+from app.core.security import create_access_token, get_current_user
+from app.models import User
+from app.schemas import UserCreate, UserLogin, Token, UserResponse
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 

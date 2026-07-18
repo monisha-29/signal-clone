@@ -5,10 +5,10 @@ Handles endpoints for searching users and managing contacts.
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
-from backend.app.core.db import get_db
-from backend.app.core.security import get_current_user
-from backend.app.models import User, Contact
-from backend.app.schemas import UserResponse, ContactResponse, ContactCreate
+from app.core.db import get_db
+from app.core.security import get_current_user
+from app.models import User, Contact
+from app.schemas import UserResponse, ContactResponse, ContactCreate
 
 router = APIRouter(prefix="/api/users", tags=["users"])
 

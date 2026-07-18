@@ -9,8 +9,8 @@ from typing import Optional
 from fastapi import Request, Depends, HTTPException, status
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
-from backend.app.core.db import get_db
-from backend.app.models import User
+from app.core.db import get_db
+from app.models import User
 
 SECRET_KEY = "signal_messenger_super_secret_key"
 ALGORITHM = "HS256"
