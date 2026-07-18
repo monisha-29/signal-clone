@@ -1,0 +1,52 @@
+/**
+ * globals.css
+ * 
+ * Global stylesheet for the application.
+ * Imports Tailwind CSS and defines CSS variables for theming (dark/light mode) and custom scrollbars.
+ */
+@import "tailwindcss";
+
+/* ─── Dark Mode (default) ─────────────────────────── */
+:root {
+  --bg:       #111215;
+  --surface:  #18191d;
+  --surface2: #202126;
+  --border:   #24252a;
+  --muted:    #9ca3af;
+  --text:     #f3f4f6;
+  --text-sub: #6b7280;
+  --accent:   #3a76f0;
+  --bubble-me: #3a76f0;
+  --bubble-them: #202126;
+  --bubble-them-text: #f3f4f6;
+  --bubble-them-border: #2e3039;
+}
+
+/* ─── Light Mode ──────────────────────────────────── */
+html:not(.dark) {
+  --bg:       #f0f2f5;
+  --surface:  #ffffff;
+  --surface2: #f5f7fa;
+  --border:   #e4e6eb;
+  --muted:    #65676b;
+  --text:     #1c1e21;
+  --text-sub: #65676b;
+  --bubble-me: #3a76f0;
+  --bubble-them: #e4e6eb;
+  --bubble-them-text: #1c1e21;
+  --bubble-them-border: transparent;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ─── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
