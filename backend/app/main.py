@@ -12,8 +12,8 @@ import os
 import shutil
 import uuid
 from app.core.db import init_db, SessionLocal
-from backend.app.seed import seed_data
-from backend.app.routers import auth, users, conversations, messages, ws
+from app.seed import seed_data
+from app.routers import auth, users, conversations, messages, ws
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
